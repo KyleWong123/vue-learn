@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="8f5c8355-047d-4f25-a82a-91af3090d527" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="HTML File" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectId" id="1euCli16AbVxZs7vV98NR7xd0hE" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/js" />
+    <property name="settings.editor.selected.configurable" value="preferences.fileTypes" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="E:\project\vue\Day1\LearnVuejs01\js" />
+      <recent name="E:\project\vue\Day1\LearnVuejs01" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\project\vue\Day1\LearnVuejs01\js" />
+    </key>
+  </component>
+  <component name="RunManager" selected="JavaScript Debug.01-列表显示.html">
+    <configuration name="01-HelloVuejs.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/LearnVuejs01/01-Vue/01-HelloVuejs.html" useBuiltInWebServerPort="true">
+      <method v="2" />
+    </configuration>
+    <configuration name="01-列表显示.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/LearnVuejs01/01-Vue/01-列表显示.html" useBuiltInWebServerPort="true">
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JavaScript Debug.01-列表显示.html" />
+        <item itemvalue="JavaScript Debug.01-HelloVuejs.html" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="8f5c8355-047d-4f25-a82a-91af3090d527" name="Default Changelist" comment="" />
+      <created>1595162245292</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1595162245292</updated>
+      <workItem from="1595162252197" duration="6555000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="184" y="0" key="SettingsEditor" timestamp="1595165732408">
+      <screen x="0" y="0" width="1366" height="738" />
+    </state>
+    <state x="184" y="0" key="SettingsEditor/0.0.1366.738@0.0.1366.738" timestamp="1595165732408" />
+    <state x="339" y="159" key="run.anything.popup" timestamp="1595164952288">
+      <screen x="0" y="0" width="1366" height="738" />
+    </state>
+    <state x="339" y="159" key="run.anything.popup/0.0.1366.738@0.0.1366.738" timestamp="1595164952288" />
+  </component>
+</project>

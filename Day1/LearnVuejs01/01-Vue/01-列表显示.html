@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>遍历列表</title>
+</head>
+<body>
+<div id="app">
+    <ul>
+        <li v-for = 'item in movie'>{{item}}</li>
+    </ul>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script>
+    const app = new Vue({
+        el: '#app',
+        data: {
+            movie: ['天下无双', '海王', '无人知晓']
+        }
+    })
+</script>
+</body>
+</html>

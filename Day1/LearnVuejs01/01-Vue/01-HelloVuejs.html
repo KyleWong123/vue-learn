@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Vue-firstDay</title>
+</head>
+<body>
+<div id="app">
+    <H2>{{message}}</H2>
+</div>
+<!--<script src="../js/vue.js"></script>-->
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script>
+    const app = new Vue({
+        el: '#app', // 用于挂在要管理的数据
+        data: { // 定义数据
+            message: 'hello, kyle'
+        }
+    })
+</script>
+</body>
+</html>
