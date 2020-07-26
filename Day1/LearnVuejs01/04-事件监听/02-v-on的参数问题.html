@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<div id="app">
+  {{message}}
+<!--  无参数函数后面的括号可以省略-->
+  <button @click="btn1Click">button1</button>
+<!--  当函数有一个参数要传递时，需要加括号，并输入要传递的值-->
+<!--  若不传，则会创建一个Event对象，返回当前的事件-->
+  <button @click="btn2Click(123)">button2</button>
+  <button @click="btn2Click">button2</button>
+<!--  在定义方法时，既需要Event，也需要其他参数-->
+  <button @click="btn3Click(123, $event)">button3</button>
+
+</div>
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script>
+  const app = new Vue({
+    el: '#app',
+    data: {
+      message: "hello"
+    },
+    methods: {
+      btn1Click(){
+        console.log("button1点击");
+      },
+      btn2Click(value){
+        console.log("button2点击" + value);
+      },
+      btn3Click(value, event){
+        console.log("button3点击" + value + event);
+      }
+    }
+  })
+</script>
+</body>
+</html>

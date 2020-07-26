@@ -14,7 +14,11 @@
       </list>
     </option>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
+  </component>
   <component name="ProjectId" id="1euCli16AbVxZs7vV98NR7xd0hE" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showExcludedFiles" value="true" />
@@ -24,16 +28,18 @@
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/js" />
-    <property name="settings.editor.selected.configurable" value="preferences.fileTypes" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/02-vue插值" />
+    <property name="settings.editor.selected.configurable" value="editing.templates" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\project\vue\Day1\LearnVuejs01\02-vue插值" />
+      <recent name="E:\project\vue\Day1\LearnVuejs01\js" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="E:\project\vue\Day1\LearnVuejs01\04-事件监听" />
       <recent name="E:\project\vue\Day1\LearnVuejs01\js" />
       <recent name="E:\project\vue\Day1\LearnVuejs01" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="E:\project\vue\Day1\LearnVuejs01\js" />
     </key>
   </component>
   <component name="RunManager" selected="JavaScript Debug.01-列表显示.html">
@@ -61,6 +67,10 @@
       <option name="presentableId" value="Default" />
       <updated>1595162245292</updated>
       <workItem from="1595162252197" duration="6555000" />
+      <workItem from="1595416974159" duration="3335000" />
+      <workItem from="1595514303955" duration="2348000" />
+      <workItem from="1595600738198" duration="2954000" />
+      <workItem from="1595673679621" duration="12895000" />
     </task>
     <servers />
   </component>
@@ -68,13 +78,18 @@
     <option name="version" value="1" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="184" y="0" key="SettingsEditor" timestamp="1595165732408">
-      <screen x="0" y="0" width="1366" height="738" />
+    <state x="184" y="0" key="SettingsEditor" timestamp="1595431080538">
+      <screen x="0" y="0" width="1366" height="768" />
     </state>
     <state x="184" y="0" key="SettingsEditor/0.0.1366.738@0.0.1366.738" timestamp="1595165732408" />
+    <state x="184" y="0" key="SettingsEditor/0.0.1366.768@0.0.1366.768" timestamp="1595431080538" />
     <state x="339" y="159" key="run.anything.popup" timestamp="1595164952288">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
     <state x="339" y="159" key="run.anything.popup/0.0.1366.738@0.0.1366.738" timestamp="1595164952288" />
+    <state x="346" y="89" width="672" height="678" key="search.everywhere.popup" timestamp="1595767650284">
+      <screen x="0" y="0" width="1366" height="768" />
+    </state>
+    <state x="346" y="89" width="672" height="678" key="search.everywhere.popup/0.0.1366.768@0.0.1366.768" timestamp="1595767650284" />
   </component>
 </project>

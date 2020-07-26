@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>v-bind动态绑定属性</title>
+</head>
+<body>
+<div id="app">
+  {{message}}
+  <span v-for="item in images">
+     <img v-bind:src="item">
+  </span>
+  <a v-bind:href="url">百度一下</a>
+
+  <!--语法糖形式-->
+  <a :href="url">语法糖形式：</a>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script>
+  const app = new Vue({
+    el: '#app',
+    data: {
+      message: "使用v-bind绑定属性，动态获取值",
+      images: ['https://img13.360buyimg.com/pop/s590x470_jfs/t1/121897/7/5395/86012/5ef19b7aE0e59b030/2d07d3abf0b13036.jpg.webp',
+        'https://imgcps.jd.com/ling4/1151232/5LiK5rW35ZGz6YGT/54iG5qy-55u06ZmN/p-5bd8253082acdd181d02fa5d/16438f68/cr/s/q.jpg'],
+      url:"http://www.baidu.com"
+    }
+  })
+</script>
+
+</body>
+</html>

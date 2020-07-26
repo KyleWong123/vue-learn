@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>使用v-bind动态绑定class属性</title>
+</head>
+<style>
+  .title{
+    color: red;
+  }
+  .active{
+    font-size: 20px;
+  }
+</style>
+<body>
+<div id="app">
+  {{message}}
+  <!--多个class值会取并集，不会覆盖，注意{}-->
+  <!--class对象语法-->
+<!--  <h2 :class="{key1:value1, key2:value2}"></h2>-->
+  <h1 class="title" :class="{active}">{{value}}</h1>
+  <button v-on:click="clickChangeFontSize">点击变大小</button>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script>
+  const app = new Vue({
+    el: '#app',
+    data: {
+      message: "使用v-bind动态绑定class属性",
+      value: "看我变大小",
+      active: true
+    },
+    methods:{
+      clickChangeFontSize: function (){
+        alert("点击生效"),
+        this.active = !this.active
+      }
+    }
+  })
+</script>
+</body>
+</html>

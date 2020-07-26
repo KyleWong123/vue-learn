@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<style>
+  .red{
+    color: red;
+  }
+</style>
+<body>
+<div id="app">
+  {{message}}
+  <li v-for="(item,index) in movies" :class="{red: changeId == index}" v-on:click="change(index)" >{{index}}--{{item}}</li>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script>
+  const app = new Vue({
+    el: '#app',
+    data: {
+      message: "hello",
+      movies: ["海王", "蜘蛛侠", "风尘"],
+      changeId: 0
+    },
+    methods:{
+      change: function (index) {
+        alert("事件触发");
+        this.changeId = index
+      }
+    }
+
+  })
+</script>
+</body>
+</html>

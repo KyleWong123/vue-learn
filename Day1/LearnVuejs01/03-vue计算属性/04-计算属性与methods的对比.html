@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<style>
+  .title{
+    font-size: 50px;
+    color: red;
+  }
+</style>
+<body>
+<div id="app">
+  <p class="title">计算属性与methods的对比，计算属性有缓存，执行效率较高</p>
+  {{message}}
+  {{getFullName()}}
+  {{getFullName()}}
+  {{getFullName()}}
+  {{fullName}}
+  {{fullName}}
+  {{fullName}}
+</div>
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script>
+  const app = new Vue({
+    el: '#app',
+    data: {
+      message: "hello",
+      lastName: "Kyle",
+      firstName: "wong"
+    },
+    methods:{
+      getFullName: function () {
+        console.log("这是调用methods");
+        return this.lastName + ' ' + this.firstName;
+      }
+    },
+    computed:{
+      fullName: function () {
+        console.log("这是调用计算属性");
+        return this.lastName + ' ' + this.firstName;
+      }
+    }
+  })
+</script>
+</body>
+</html>
