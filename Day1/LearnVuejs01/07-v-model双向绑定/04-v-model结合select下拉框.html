@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<div id="app">
+  <p>{{message}}</p>
+  <p>单选</p>
+  <select v-model="fruit">
+    <option value="苹果">苹果</option>
+    <option value="香蕉">香蕉</option>
+    <option value="橘子">橘子</option>
+    <option value="榴莲">榴莲</option>
+  </select>
+  <p>当前选中的水果为：{{fruit}}</p>
+  <br>
+  <br>
+  <p>多选</p>
+  <select v-model="fruits" multiple>
+    <option value="苹果">苹果</option>
+    <option value="香蕉">香蕉</option>
+    <option value="橘子">橘子</option>
+    <option value="榴莲">榴莲</option>
+  </select>
+  <p>当前选中的水果有：{{fruits}}</p>
+
+</div>
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script>
+  const app = new Vue({
+    el: '#app',
+    data: {
+      message: "v-model与select下拉框",
+      fruit: "苹果",
+      fruits: []
+    }
+  })
+</script>
+</body>
+</html>

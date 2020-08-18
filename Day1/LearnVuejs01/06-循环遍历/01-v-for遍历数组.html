@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<div id="app">
+  {{message}}
+  <ul>
+    <p>无下标</p>
+    <li v-for="item in name">{{item}}</li>
+  </ul>
+  <ul>
+    <p>有下标</p>
+    <li v-for="(item, index) in name">{{index+1}} -- {{item}}</li>
+  </ul>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script>
+  const app = new Vue({
+    el: '#app',
+    data: {
+      message: "遍历数组",
+      name: ["Kyle", "Nancy", "Adolf"]
+    }
+  })
+</script>
+</body>
+</html>

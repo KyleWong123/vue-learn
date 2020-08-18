@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<div id="app">
+  {{message}}
+  <ul>
+    <p>遍历key值</p>
+    <li v-for="item in info">{{item}}</li>
+  </ul>
+  <ul>
+    <p>获取键值对</p>
+    <li v-for="(item, key) in info">{{key}}--{{item}}</li>
+  </ul>
+  <ul>
+    <p>获取键值对以及索引</p>
+    <li v-for="(item, key, index) in info">{{index+1}}--{{key}}--{{item}}</li>
+  </ul>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script>
+  const app = new Vue({
+    el: '#app',
+    data: {
+      message: "遍历对象",
+      info: {
+        name: "kyle",
+        age: 26,
+        sex: "male"
+
+      }
+    }
+  })
+</script>
+</body>
+</html>

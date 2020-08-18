@@ -7,12 +7,17 @@
 <style>
   .red{
     color: red;
+    font-size: 50px;
   }
 </style>
 <body>
 <div id="app">
   {{message}}
-  <li v-for="(item,index) in movies" :class="{red: changeId == index}" v-on:click="change(index)" >{{index}}--{{item}}</li>
+  <li v-for="(item,index) in movies"
+      :class="{red: changeId == index}"
+      @click="change(index)" >
+    {{index}}--{{item}}
+  </li>
 </div>
 <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 <script>
@@ -25,7 +30,7 @@
     },
     methods:{
       change: function (index) {
-        alert("事件触发");
+        console.log("触发点击事件");
         this.changeId = index
       }
     }

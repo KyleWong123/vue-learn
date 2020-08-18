@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<div id="app">
+  <p>{{message}}</p>
+  <label v-for="item in balls">
+    <input type="checkbox" :value="item" v-model="hobbies">{{item}}
+  </label>
+  <p>选择的运动有：{{hobbies}}</p>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script>
+  const app = new Vue({
+    el: '#app',
+    data: {
+      message: "值绑定",
+      balls: ['篮球', '足球', '排球', '羽毛球'],
+      hobbies: []
+    }
+  })
+</script>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<div id="app">
+  {{message}}
+
+<!--  单选框-->
+<!--  <div>-->
+<!--    <label for="agree">-->
+<!--      <input id="agree" type="checkbox" v-model="isAgree"> 同意-->
+<!--    </label>-->
+<!--    <p>当前选择为{{isAgree}}</p>-->
+<!--    <button :disabled="!isAgree">下一步</button>-->
+<!--  </div>-->
+  <div>
+      <input id="c1" type="checkbox" value="篮球" v-model="hobbies">
+    <label for="c1">篮球</label>
+      <input id="c2" type="checkbox" value="足球" v-model="hobbies">
+    <label for="c2">足球</label>
+      <input id="c3" type="checkbox" value="排球" v-model="hobbies">
+    <label for="c3">排球</label>
+    <h>兴趣爱好:{{hobbies}}</h>
+  </div>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script>
+  const app = new Vue({
+    el: '#app',
+    data: {
+      message: "双向绑定多选框",
+      isAgree: false,
+      hobbies: []
+    }
+  })
+</script>
+</body>
+</html>
