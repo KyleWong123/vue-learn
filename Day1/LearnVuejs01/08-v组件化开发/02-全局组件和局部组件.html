@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="app">
+  {{message}}
+    <extend></extend>
+    <extend></extend>
+
+</div>
+<div id="app2">
+    {{message}}
+    <extend></extend>
+    <extend></extend>
+
+</div>
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script>
+    // 1.创建组件构造器
+    const extend = Vue.extend({
+       template: `
+       <div>
+        <h1>我是模板中的标题</h1>
+        <p>我是模板中的内容</p>
+</div>
+       `
+    });
+
+    // 2.注册组件(该种方式注册的组件为全局组件，意味着在每个Vue实例中都可以使用该组件)
+    Vue.component('my-tem-con', extend)
+    const app = new Vue({
+    el: '#app',
+    data: {
+      message: "第一个vue实例"
+    },
+        // 该种方式注册是组件为局部组件，只用于创建的vue实例中
+        components: {
+            extend  //也可以键值对形式： my_tem_con: extend
+        }
+  });
+    const app2 = new Vue({
+        el: '#app2',
+        data: {
+            message: "第二个vue实例"
+        }
+    })
+</script>
+</body>
+</html>

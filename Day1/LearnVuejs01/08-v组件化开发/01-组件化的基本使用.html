@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="app">
+  {{message}}
+    <my-template></my-template>
+
+    <my-template></my-template>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script>
+    // 1.创建组件构造器
+    const extend = Vue.extend({
+       template: `
+        <div>
+            <h1>我是组件中的标题</h1>
+            <p>我是主要内容</p>
+       </div>`
+    });
+
+    // 2.注册组件 component(模板标识、模板)
+    Vue.component('my-template', extend);
+  const app = new Vue({
+    el: '#app',
+    data: {
+      message: "组件化开发"
+    }
+  })
+</script>
+</body>
+</html>
