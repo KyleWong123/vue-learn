@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="app">
+  {{message}}
+    <template_cmp></template_cmp>
+</div>
+<template id="cmp">
+    <div>
+        <h1>计数：{{counter}}</h1>
+        <button @click="increment">+</button>
+        <button @click="decrement" :disabled="counter <= 0">-</button>
+    </div>
+</template>
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script>
+    // 注册全局组件
+    Vue.component('template_cmp',{
+        template: '#cmp',
+        data() {
+            return {
+                counter: 0
+            }
+        },
+        methods: {
+            increment() {
+                this.counter++;
+            },
+            decrement() {
+                this.counter--;
+            }
+        }
+    });
+  const app = new Vue({
+    el: '#app',
+    data: {
+      message: "hello"
+    }
+  })
+</script>
+</body>
+</html>

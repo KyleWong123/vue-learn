@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="app">
+<!--    // 将父组件中的变量值绑定到子组件上-->
+    <child_cmp :cmovies="movies" :cmessage="message"></child_cmp>
+</div>
+<template id="cmp">
+    <div>
+        <ul>
+            <li v-for="item in cmovies">{{item}}</li>
+        </ul>
+        <p>{{cmessage}}</p>
+    </div>
+</template>
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script>
+    //注册全局组件
+    Vue.component('child_cmp',{
+        template: '#cmp',
+        data() {
+            return{}
+        },
+        // 创建方式一：数组
+        // props: ['cmovies', 'cmessage']
+
+        // 创建方式二：对象
+        props: {
+            cmessage: {
+                // 变量的数据类型
+                type: String,
+                // 默认值
+                default: '',
+                // 是否必传
+                required: true
+            },
+            cmovies: {
+                type: Array,
+                // 当给对象默认值时，必须使用default函数返回一个对象
+                // default: []是错误的写法
+                default() {
+                    return []
+                }
+            }
+        }
+    });
+  const app = new Vue({
+    el: '#app',
+    data: {
+      message: "父组件子组件传递数据",
+        movies: ['a', 'b']
+    }
+  })
+</script>
+</body>
+</html>
