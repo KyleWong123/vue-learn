@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<div id="app">
+  {{message}}
+<!--  直接使用父组件-->
+  <par></par>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script>
+  // 创建第一个组件构造器
+  const extend_chil = Vue.extend({
+    template: `
+    <div>
+       <h1>子标题</h1>
+        <p>子内容</p>
+     </div>
+    `
+  });
+
+  // 创建第二个组件构造器
+  const extend_pare = Vue.extend({
+    template: `
+    <div>
+     <h1>父标题</h1>
+      <p>父内容</p>
+<!--      // 添加子组件-->
+        <chil></chil>
+    </div>
+    `,
+    // 将子组件注册到父组件中
+    components: {
+      chil: extend_chil
+    }
+  });
+  const app = new Vue({
+    el: '#app',
+    data: {
+      message: "父组件和子组件"
+    },
+    // 在该vue实例中直接注册父组件
+    components: {
+      par: extend_pare
+    }
+  })
+</script>
+</body>
+</html>

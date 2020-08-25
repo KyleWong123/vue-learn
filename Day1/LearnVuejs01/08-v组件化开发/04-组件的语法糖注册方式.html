@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<div id="app">
+  {{message}}
+  <global_com></global_com>
+  <local_com></local_com>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script>
+  // 创建全局组件对象并注册
+  Vue.component('global_com', {
+    template: `
+    <div>
+     <h1>语法糖注册全局组件</h1>
+     <p>我是全局组件</p>
+</div>
+    `
+  });
+  const app = new Vue({
+    el: '#app',
+    data: {
+      message: "组建语法糖注册方式"
+    },
+    components: {
+      'local_com':{
+        template:
+            `
+        <div>
+     <h1>语法糖注册局部组件</h1>
+     <p>我是局部组件</p>
+</div>
+        `
+
+      }
+
+    }
+  })
+</script>
+</body>
+</html>
