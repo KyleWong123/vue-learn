@@ -6,12 +6,15 @@
 </head>
 <body>
 <div id="app">
-<!--原本函数不传参，默认传event，但子传父，就会默认传递子组件的参数-->
-    <child_cmp @itemclick="parentclick"></child_cmp>
+    <child_cmp :c-movies="movies" :c-message="message" :c-info="info"></child_cmp>
 </div>
 <template id="cmp">
     <div>
-        <button v-for="item in cate" @click="myclick(item)">{{item.name}}</button>
+        <ul>
+            <li v-for="item in cMovies">{{item}}</li>
+        </ul>
+        <p>{{cMessage}}</p>
+        <h1>{{cInfo}}</h1>
     </div>
 </template>
 <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
@@ -19,20 +22,8 @@
     //注册全局组件
     const child_cmp = {
         template: '#cmp',
-        data() {
-            return{
-                cate: [
-                    {id: 11, name: "热门推荐 "},
-                    {id: 22, name: "书籍"},
-                    {id: 33, name: "衣物"},
-                ]
-            }
-        },
-        methods: {
-            myclick(item) {
-                // 发射事件
-                this.$emit('itemclick', item)
-            }
+        props: {
+
         }
     };
   const app = new Vue({
@@ -48,11 +39,6 @@
       // 祖册局部组件
       components: {
           child_cmp
-      },
-      methods: {
-        parentclick(item){
-            console.log('parentclick', item)
-        }
       }
   })
 </script>
