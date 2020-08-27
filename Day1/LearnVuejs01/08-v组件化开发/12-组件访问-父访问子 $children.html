@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="app">
+    <cpm></cpm>
+    <button @click="btnClick">查看子组件内容</button>
+    <cpm></cpm>
+    <button @click="btnClick2">查看子组件另一个方法内容</button>
+</div>
+<template id="cmp">
+    <h1>123</h1>
+</template>
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script>
+  const app = new Vue({
+    el: '#app',
+    data: {
+      message: "hello"
+    },
+      methods: {
+        btnClick() {
+            // 获取子组件，返回的是一个列表
+            console.log(this.$children);
+            // 调用子组件的方法
+            this.$children[0].showmessage();
+        },
+          btnClick2() {
+              this.$children[1].showAnother();
+          }
+      },
+      // 注册局部组件
+      components: {
+        cpm: {
+            template: "#cmp",
+            methods: {
+                showmessage() {
+                    console.log("child message");
+                },
+                showAnother() {
+                    console.log("another method");
+                }
+            }
+        }
+      }
+  })
+</script>
+</body>
+</html>

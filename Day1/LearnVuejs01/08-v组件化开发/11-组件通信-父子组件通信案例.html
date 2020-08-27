@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="app">
+  <cpm :number1="num1"
+       :number2="num2"
+       @changenum1 = "change1"
+       @changenum2 = "change2"
+  ></cpm>
+</div>
+<template id="cpm">
+    <div>
+        <p>props:{{number1}}</p>
+        <p>data:{{dnumber1}}</p>
+<!--        vue不建议使用这用写法-->
+<!--        <input type="text" v-model="number1">-->
+        <input type="text" :value="dnumber1" @input="changenum1">
+        <p>props:{{number2}}</p>
+        <p>data:{{dnumber2}}</p>
+<!--        <input type="text" v-model="number2">-->
+        <input type="text" :value="dnumber1" @input="changenum2">
+    </div>
+</template>
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script>
+  const app = new Vue({
+    el: '#app',
+    data: {
+      message: "hello",
+        num1: 1,
+        num2: 2
+    },
+      methods: {
+        change1(value) {
+            this.num1 = parseInt(value)
+        },
+          change2(value) {
+            this.num2 = parseInt(value)
+          }
+      },
+    // 注册局部组件
+      components: {
+        cpm: {
+            template: "#cpm",
+            props: {
+                number1: Number,
+                number2: Number
+            },
+            data() {
+                return {
+                    dnumber1: this.number1,
+                    dnumber2: this.number2
+                }
+            },
+            methods: {
+                changenum1(event){
+                    this.dnumber1 = event.target.value;
+                    this.$emit("changenum1", this.dnumber1)
+                },
+                changenum2(event){
+                    this.dnumber2 = event.target.value;
+                    this.$emit("changenum2", this.dnumber2)
+                }
+            }
+        }
+      }
+  })
+</script>
+</body>
+</html>

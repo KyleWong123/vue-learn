@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="app">
+    <cpm ref="cpm1"></cpm>
+    <button @click="btnClick">查看子组件内容</button>
+    <cpm ref="cpm2"></cpm>
+    <button @click="btnClick2">查看子组件另一个方法内容</button>
+</div>
+<template id="cmp">
+    <h1>123</h1>
+</template>
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script>
+  const app = new Vue({
+    el: '#app',
+    data: {
+      message: "hello"
+    },
+      methods: {
+        btnClick() {
+            // 获取子组件，$refs是对象类型，默认是一个空对象，必须在组件上添加ref=''属性
+            // console.log(this.$refs.cpm1.showmessage());
+            // 也可以使用[]方式访问
+            this.$refs['cpm1'].showmessage();
+        },
+          btnClick2() {
+            this.$refs.cpm2.showAnother();
+          }
+      },
+      // 注册局部组件
+      components: {
+        cpm: {
+            template: "#cmp",
+            methods: {
+                showmessage() {
+                    console.log("child message");
+                },
+                showAnother() {
+                    console.log("another method");
+                }
+            }
+        }
+      }
+  })
+</script>
+</body>
+</html>

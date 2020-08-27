@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="app">
+    <cmp></cmp>
+</div>
+
+<template id="cmp">
+    <div>
+        <h1>我是子组件</h1>
+        <button @click="getParent">获取父组件内容</button>
+        <childcmp></childcmp>
+    </div>
+</template>
+
+<template id="childcmp">
+    <div>
+        <h1>我是子组件中的组件，哈哈哈</h1>
+        <button @click="getcmp">获取孙子组件的父组件</button>
+    </div>
+</template>
+
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script>
+  const app = new Vue({
+    el: '#app',
+    data: {
+      message: "vue实例中的属性"
+    },
+      components: {
+        cmp: {
+            template: "#cmp",
+            data() {
+                return{
+                  message: "我是孙子的爸爸"
+                }
+            },
+            methods: {
+                getParent() {
+                    // 由于该组件的父组件为Vue实例,所以获取到的是Vue实例中的内容
+                    console.log(this.$parent);
+                    console.log(this.$parent.message);
+                }
+                },
+                components: {
+                    childcmp: {
+                        template: "#childcmp",
+                        methods: {
+                            getcmp() {
+                                console.log(this.$parent)
+                                console.log("我是孙子，我在查看我的爸爸：" + this.$parent.message);
+                            }
+                        }
+                    }
+                }
+        },
+      }
+  })
+</script>
+</body>
+</html>
