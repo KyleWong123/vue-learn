@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="app">
+  {{message}}
+    <div>
+        <p>我使用插值自带的默认值</p>
+        <cmp></cmp>
+    </div>
+    <br>
+    <br>
+    <br>
+    <div>
+        <p>我使用h标签来占用slot的位置</p>
+        <cmp>
+            <h1>我来占用插值的位置</h1>
+        </cmp>
+    </div>
+</div>
+<template id="cmp">
+    <div>
+        <h1>我是子组件</h1>
+        <p>来试试我的插槽的使用 -- slot</p>
+<!--        插值的使用，可以在引用组件的地方，自定义内容-->
+<!--        <slot></slot>-->
+<!--        给插值默认值-->
+        <slot><button>按钮</button></slot>
+    </div>
+</template>
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script>
+  const app = new Vue({
+    el: '#app',
+    data: {
+      message: "插槽的基本使用"
+    },
+      components: {
+        cmp: {
+            template: '#cmp'
+        }
+      }
+  })
+</script>
+</body>
+</html>

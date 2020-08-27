@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="app">
+  {{message}}
+    <cmp>
+<!--        如果给slot没有添加name，修改一个slot会修改所有。slot不仅可以修改其内容，类型等都可以修改-->
+<!--        <button>插槽改为btn</button>-->
+<!--        具名修改-->
+        <button slot="slot1">具名修改1</button>
+    </cmp>
+</div>
+<template id="cmp">
+    <div>
+        <h1>我是子组件</h1>
+        <p>来一些插槽</p>
+        <slot name="slot1">插槽1</slot>
+        <slot name="slot2">插槽2</slot>
+        <slot name="slot3">插槽3</slot>
+    </div>
+</template>
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script>
+  const app = new Vue({
+    el: '#app',
+    data: {
+      message: "具名插槽的使用"
+    },
+    // 注册私有组件
+      components: {
+        cmp: {
+            template: '#cmp'
+        }
+      }
+  })
+</script>
+</body>
+</html>
