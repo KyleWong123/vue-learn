@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="app">
+  {{message}}
+    <p>我直接使用子组件中的样式</p>
+    <cmp></cmp>
+    <br>
+    <p>我要更换子组件中的样式</p>
+<!--    无法直接获取子组件中的属性-->
+<!--    <cmp v-for="item in languages">{{item}}</cmp>-->
+    <cmp>
+
+        <template slot-scope="slot">
+                        <span v-for="item in slot.data">
+            {{item}}***
+                        </span>
+            <br>
+            <span v-for="item in slot.datamovies">
+            {{item}}---
+                        </span>
+        </template>
+    </cmp>
+
+    <cmp>
+
+        <template slot-scope="slot">
+                        <span>
+            {{slot.data.join(' ** ')}}
+                        </span>
+            <br>
+<!--            <span>-->
+<!--            {{slot.datamovies.join(' &#45;&#45; ')}}-->
+<!--                        </span>-->
+        </template>
+    </cmp>
+
+</div>
+<template id="cmp">
+    <div>
+        <slot :data="languages">
+            <h1>我是子组件</h1>
+            <ul>
+                <li v-for="item in languages">{{item}}</li>
+            </ul>
+        </slot>
+        <slot :datamovies = "movies">
+            <ul>
+                <li v-for="item in movies">{{item}}</li>
+            </ul>
+        </slot>
+    </div>
+</template>
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script>
+  const app = new Vue({
+    el: '#app',
+    data: {
+      message: "作用域插槽的使用"
+    },
+      create() {
+        this.message.join(' * ')
+      },
+      components: {
+        cmp: {
+            template: "#cmp",
+            data() {
+                return{
+                    languages: ['Java', 'C', 'C#'],
+                    movies: ["A", "B", "C"]
+                }
+            }
+        }
+      }
+  })
+</script>
+</body>
+</html>
